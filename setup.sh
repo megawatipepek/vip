@@ -604,8 +604,8 @@ echo -e "perintah ( alif ) tanpa tanda kurung"
 echo -e "" 
 read -p "Pres enter untuk reboot : " ieieie 
 touch /root/system
-sysctl -w net.ipv6.conf.all.disable_ipv6=1 >/dev/null 2>&1
-sysctl -w net.ipv6.conf.default.disable_ipv6=1 >/dev/null 2>&1
+#sysctl -w net.ipv6.conf.all.disable_ipv6=1 >/dev/null 2>&1
+#sysctl -w net.ipv6.conf.default.disable_ipv6=1 >/dev/null 2>&1
 rm -fr .bash_history
 reboot
 }
