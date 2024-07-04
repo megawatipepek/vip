@@ -94,8 +94,8 @@ clear
 run_tools() {
 #update
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
-sysctl -w net.ipv6.conf.all.disable_ipv6=1 >/dev/null 2>&1
-sysctl -w net.ipv6.conf.default.disable_ipv6=1 >/dev/null 2>&1
+#sysctl -w net.ipv6.conf.all.disable_ipv6=1 >/dev/null 2>&1
+#sysctl -w net.ipv6.conf.default.disable_ipv6=1 >/dev/null 2>&1
 apt update -y
 apt upgrade -y
 apt dist-upgrade -y
@@ -486,7 +486,7 @@ bash acme.sh --install
 rm acme.sh
 cd .acme.sh
 bash acme.sh --register-account -m rere@rerechan02.com
-bash acme.sh --issue --standalone -d $domain --force
+bash acme.sh --issue --standalone -d $domain --listen-v6
 bash acme.sh --installcert -d $domain --fullchainpath /etc/xray/xray.crt --keypath /etc/xray/xray.key
 wget -O /etc/xray/config.json https://raw.githubusercontent.com/megawatipepek/vip/main/config.json
 
